@@ -9,8 +9,7 @@ var person = {
     console.log("Hello, " + this.name)
   }
 }
-
-var messageFunc = person.message
+var messageFunc = person.message.bind(person)
 messageFunc();
 
 
