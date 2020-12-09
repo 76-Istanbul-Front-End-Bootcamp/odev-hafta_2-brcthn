@@ -22,16 +22,16 @@ messageFunc();
   sonuclarini yazdiracak sekilde duzenleyiniz.
 */
 var numbers = {
-  numbers: [[10,20,30], 2],
-  multiply: function(){
-    this.numbers[0].map(function(number, numberIndex){
+    numbers: [[10,20,30], 2],
+    multiply: function(){
+     this.numbers[0].map(function(number, numberIndex){
         const result = number * this.numbers[1];
-        console.log(result)
-    })
-  }
-};
-
-numbers.multiply();
+        console.log(result) 
+     }.bind(this))
+    }
+  };
+  
+ numbers.multiply();
 
 
 /* 
