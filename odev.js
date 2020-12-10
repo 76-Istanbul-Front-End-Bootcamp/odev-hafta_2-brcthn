@@ -41,9 +41,29 @@ var numbers = {
   Ornek : isValidName("John") true donmeli
   Ornek : isValidName(" J ohn") false donmeli
 */
-function isValidName(name){
 
+function isValidName2(name) {
+    if (typeof (name) !== "string" || name.length < 3) {
+        return "false";
+    }
+    const newName = name.trim();
+    if (newName == "") {
+        return "false";
+    }
+    const nameLower = newName.toLowerCase();
+    const nameCharacter = [...newName];
+
+    for (var i = 0; i < nameCharacter.length; i++) {
+        if (97 > nameLower.charCodeAt(i) || nameLower.charCodeAt(i) > 122) {
+            return "false";
+        }
+        continue;
+    }
+    return "true";
 }
+
+
+
 
 /*
   Odev 4:
@@ -57,8 +77,12 @@ function isValidName(name){
   Ornek: katilimSaati("3", 20) 60 sonucunu vermelidir.
   Ornek: katilimSaati("5", "30") 150 sonucunu vermelidir.
 */
-function katilimSaati(dersSayisi, dersSuresi){
-
+function katilimSaati(dersSayisi, dersSuresi) {
+ if(!isNaN(Number(dersSayisi)) && !isNaN(Number(dersSuresi))){
+    return dersSayisi*dersSuresi;
+ }else{
+    return "Invalid Parameter";
+ }
 }
 
 
