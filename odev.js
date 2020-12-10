@@ -78,11 +78,12 @@ function isValidName2(name) {
   Ornek: katilimSaati("5", "30") 150 sonucunu vermelidir.
 */
 function katilimSaati(dersSayisi, dersSuresi) {
- if(!isNaN(Number(dersSayisi)) && !isNaN(Number(dersSuresi))){
-    return dersSayisi*dersSuresi;
- }else{
-    return "Invalid Parameter";
- }
+    if(dersSayisi===""|| dersSuresi===""||dersSayisi==true|| dersSuresi==true||dersSayisi==null||dersSuresi==null |dersSayisi==false|| dersSuresi==false ){
+      return "false";
+    }
+    if (!isNaN(Number(dersSayisi)) && !isNaN(Number(dersSuresi))) {
+        return (Math.floor(dersSayisi) * Math.floor(dersSuresi))
+    } else {
+        return "false" ;
+    }
 }
-
-
